@@ -60,3 +60,10 @@ void Game::battleSequence(Enemy * enemy)
 		this->textHandler->printText(std::string("Your remaining health: ") + std::to_string(int(this->player->getHealth())));		
 	}
 }
+
+void Game::PlayGame() {
+	this->currentRoom = this->rooms[0];
+	this->inputHandler->setObserver(this->rooms[0]);
+
+	this->inputHandler->getInput();
+}

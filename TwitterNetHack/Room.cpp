@@ -176,6 +176,11 @@ Room* Room::moveTo(std::string target)
 	return targetRoom;
 }
 
+bool Room::processInput(std::string input)
+{
+	return false;
+}
+
 void Room::setNeighbour(Room * toSet, int neighbourNumber) {
 	this->neighbours[neighbourNumber] = toSet;
 }
