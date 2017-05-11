@@ -15,8 +15,7 @@ InputHandler::~InputHandler()
 void InputHandler::getInput() {
 	std::string input;
 	textHandler->printText(std::string("What do you want to do?"));
-	std::getline(std::cin, input);
-
+	std::getline(std::cin, input);	
 	for (int i = 0; i < nrOfObservers; i++) {
 		// TODO
 		// 
