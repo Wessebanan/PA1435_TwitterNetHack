@@ -33,6 +33,3 @@ std::string Enemy::getDesc()
 	return this->enemyDesc;
 }
 
-void Enemy::initiateCombat(Player * player)
-{
-}
