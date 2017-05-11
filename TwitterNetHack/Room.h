@@ -17,7 +17,7 @@ private:
 	TextHandler* textHandler;
 public:
 	Room();
-	Room(TextHandler* &textHandler, int roomNumber);
+	Room(TextHandler* textHandler, int roomNumber);
 	~Room();
 	std::string lookat(std::string name); //Returns info on what is looked at.
 	bool enemyExists(std::string enemyName);
