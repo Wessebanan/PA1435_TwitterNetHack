@@ -10,7 +10,8 @@ private:
 	Room** neighbours;
 	Enemy** enemies;
 	Obstacle** objects;
-	int nrOfObj = 1;
+	int nrOfObj = 0;
+	int nrOfenemies = 0;
 	
 
 	void exitRoom();
