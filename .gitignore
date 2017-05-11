@@ -251,7 +251,4 @@ paket-files/
 .idea/
 *.sln.iml
 
-
-*.vcxproj
-*.vcxproj.filter
 /TwitterNetHack/New Text Document.txt
