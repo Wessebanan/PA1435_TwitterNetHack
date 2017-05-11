@@ -24,24 +24,24 @@ Room::Room(TextHandler* textHandler, int roomNumber)
 		this->neighbours[i] = nullptr;
 	}
 	this->enemies = new Enemy*[10];
-	if (roomNumber = 0) {
+	if (roomNumber == 0) {
 		// Hard coded room 0
 		this->enemies[0] = new Enemy(this->textHandler, 30, 10, 7, "Meanboye", "A mean looking kinda guy.");
 		nrOfenemies++;
 	}
-	else if (roomNumber = 1) {
+	else if (roomNumber == 1) {
 		// Hard coded room 1
 		this->enemies[0] = new Enemy(this->textHandler, 40, 15, 7, "A N G E R Y", "An increasingly frustrated individual");
 		nrOfenemies++;
 	}
-	else if (roomNumber = 2) {
+	else if (roomNumber == 2) {
 		// Hard coded room 2
 		this->enemies[0] = new Enemy(this->textHandler, 15, 5, 0, "Mini Mean", "A short statured object of madness");
 		nrOfenemies++;
 		this->enemies[1] = new Enemy(this->textHandler, 15, 5, 0, "Tiny Mad", "Rage of the smaller variety");
 		nrOfenemies++;
 	}
-	else if (roomNumber = 3) {
+	else if (roomNumber == 3) {
 		// Hard coded room 3
 		this->objects[0] = new Obstacle("Spikes", "Small metal objects", "Sharp metal spikes cover the ground", 20);
 		nrOfObj++;

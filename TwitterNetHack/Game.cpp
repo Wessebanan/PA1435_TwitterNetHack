@@ -7,8 +7,22 @@ void Game::processInput(std::string input)
 		this->textHandler->printText(std::string("Where do you want to move?"));
 		target = this->inputHandler->getInput();
 		if (target == "north" || target == "east" || target == "south" || target == "west") {
-			this->currentRoom->moveToRoom(target);
-
+			this->currentRoom = this->currentRoom->moveToRoom(target);
+		}
+		else {
+			Enemy* tempEnemy = this->currentRoom->moveToEnemy(target);
+			if (tempEnemy != nullptr) {
+				this->battleSequence(tempEnemy);
+			}
+			else {
+				Obstacle* tempObstacle = this->currentRoom->moveToObstacle(target);
+				if (tempObstacle != nullptr) {
+					this->currentRoom->traverseObstacle(target, this->player);
+				}
+				else {
+					this->textHandler->printText(std::string("That target does not exist in this room."));
+				}
+			}
 		}
 	}
 }
@@ -36,6 +50,7 @@ Game::Game() {
 	this->textHandler = new TextHandler();
 	this->inputHandler = new InputHandler(this->textHandler);
 	this->player = new Player(this->textHandler, 100.0f, 60.0f, 20.0f);
+	this->generateMaze();
 }
 
 Game::~Game() {
