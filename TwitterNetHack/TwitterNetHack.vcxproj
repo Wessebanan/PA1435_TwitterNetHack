@@ -18,6 +18,13 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="TextHandler.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="InputHandler.h" />
+    <ClInclude Include="TextHandler.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{AB6708C7-93E5-4421-BD25-2ACC34D6C151}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
@@ -145,8 +152,6 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
