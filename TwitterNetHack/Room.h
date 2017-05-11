@@ -17,6 +17,4 @@ public:
 	bool traverseObstacle(std::string obstName); //Attempt to tranverse an obstacle.
 	void moveTo(std::string direction);
 };
-
-
 #endif
