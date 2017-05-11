@@ -15,12 +15,12 @@ InputHandler::~InputHandler()
 
 
 
-void InputHandler::setObserver(Room * observer)
-{
+void InputHandler::setObserver(Room * observer) {
+	this->subRoom = observer;
 }
 
-void InputHandler::setObserver(Player * observer)
-{
+void InputHandler::setObserver(Player * observer) {
+	this->subPlayer = observer;
 }
 
 std::string InputHandler::getInput() {

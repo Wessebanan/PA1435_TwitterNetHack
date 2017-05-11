@@ -23,7 +23,7 @@ Game::Game() {
 	this->textHandler = new TextHandler();
 	this->inputHandler = new InputHandler(this->textHandler);
 	this->player = new Player(this->textHandler, 100.0, 20.0, 20.0);
-
+	this->inputHandler->setObserver(player);
 }
 
 Game::~Game() {
@@ -48,4 +48,11 @@ void Game::battleSequence(Enemy * enemy)
 		this->textHandler->printText(std::string("Your remaining health: ") + std::to_string(this->player->getHealth()) + std::string("\n"));
 		system("pause");
 	}
+}
+
+void Game::PlayGame() {
+	this->currentRoom = this->rooms[0];
+	this->inputHandler->setObserver(this->rooms[0]);
+
+	this->inputHandler->getInput();
 }
