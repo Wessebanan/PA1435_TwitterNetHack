@@ -16,7 +16,5 @@ public:
 
 	std::string getName();
 	std::string getDesc();
-
-	void initiateCombat(Player* player);
 };
 #endif

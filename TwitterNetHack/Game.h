@@ -20,7 +20,7 @@ private:
 public:
 	Game();
 	~Game();
-
+	void battleSequence(Enemy * enemy);
 
 
 

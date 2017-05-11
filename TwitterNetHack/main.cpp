@@ -11,9 +11,7 @@ int main()
 	{
 		cout << "What do you want to do? (start/join/quit)\n";
 		string answer = "";
-		/*getline(cin, answer);*/
 		cin >> answer;
-		cout << answer;
 		cout << endl;
 		if (answer == "start")
 		{

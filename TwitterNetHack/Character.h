@@ -15,5 +15,8 @@ public:
 	Character(TextHandler* textHandler, float health, float attack, float defense);
 	~Character();
 	void damage(float amount);
+	float getHealth();
+	float getAttack();
+	float getDefense();
 };
 #endif
