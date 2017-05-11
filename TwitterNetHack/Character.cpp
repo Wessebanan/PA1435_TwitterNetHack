@@ -11,6 +11,9 @@ Character::Character()
 Character::Character(TextHandler * textHandler, float health, float attack, float defense)
 {
 	this->textHandler = textHandler;
+	this->health = health;
+	this->attack = attack;
+	this->defense = defense;
 }
 
 Character::~Character()

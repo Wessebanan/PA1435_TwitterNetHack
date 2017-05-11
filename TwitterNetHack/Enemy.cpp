@@ -3,7 +3,8 @@
 void Enemy::die()
 {
 	//TODO: Remove enemy.
-	//TODO: Inform player that enemy is dead and reward player with score and/or loot.
+	this->textHandler->printText(this->name + std::string(" has fallen to your might!"));
+	std::getline(std::cin, std::string());
 }
 
 Enemy::Enemy()
