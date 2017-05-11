@@ -14,6 +14,9 @@ public:
 	Enemy(TextHandler* textHandler, float health, float attack, float defense, std::string name, std::string desc);
 	~Enemy();
 
+	std::string getName();
+	std::string getDesc();
+
 	void initiateCombat(Player* player);
 };
 #endif

@@ -23,6 +23,16 @@ Enemy::~Enemy()
 {
 }
 
+std::string Enemy::getName()
+{
+	return this->name;
+}
+
+std::string Enemy::getDesc()
+{
+	return this->enemyDesc;
+}
+
 void Enemy::initiateCombat(Player * player)
 {
 }
