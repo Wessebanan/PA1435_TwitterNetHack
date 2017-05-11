@@ -15,13 +15,9 @@ Room::Room()
 	this->textHandler = nullptr;
 }
 
-Room::Room(TextHandler *& textHandler, int roomNumber, Room* neighbourN, Room* neighbourE, Room* neighbourS, Room* neighbourW)
+Room::Room(TextHandler *& textHandler, int roomNumber)
 {
 	this->neighbours = new Room*[4];
-	this->neighbours[0] = neighbourN;
-	this->neighbours[1] = neighbourE;
-	this->neighbours[2] = neighbourS;
-	this->neighbours[3] = neighbourW;
 
 	if (roomNumber = 0) {
 		// Hard coded room 0
@@ -76,4 +72,8 @@ bool Room::traverseObstacle(std::string obstName)
 
 void Room::moveTo(std::string direction)
 {
+}
+
+void Room::setNeighbour(Room * toSet, int neighbourNumber) {
+	this->neighbours[neighbourNumber] = toSet;
 }
