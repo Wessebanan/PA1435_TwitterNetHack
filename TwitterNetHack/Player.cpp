@@ -2,12 +2,13 @@
 
 void Player::quit()
 {
+	this->textHandler->printText(std::string("\nQuitting game...\n"));
 }
 
 void Player::die()
 {
-	//TODO: Inform player that they have died (textHandler).
-	system("pause");
+	this->textHandler->printText(std::string("You died at the hands of Chestcunt"));
+	std::getline(std::cin, std::string());
 	this->quit();
 }
 
