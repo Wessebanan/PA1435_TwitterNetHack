@@ -14,7 +14,7 @@ private:
 	
 
 	void exitRoom();
-	std::string enterRoom();
+	void enterRoom();
 	TextHandler* textHandler;
 public:
 	Room();
