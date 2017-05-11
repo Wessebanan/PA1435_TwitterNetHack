@@ -125,9 +125,52 @@ Room* Room::moveTo(std::string target)
 {
 	Room* targetRoom = this;
 
-	if (target == "up" && roomNr == 3)
+	if (target == "north")
 	{
+		if (roomNr == 0)
+		{
 
+		}
+		if (roomNr == 3)
+		{
+
+		}
+	}
+	else if (target == "east")
+	{
+		if (roomNr == 1)
+		{
+
+		}
+		else if (roomNr == 2)
+		{
+
+		}
+	}
+	else if (target == "south")
+	{
+		if (roomNr == 1)
+		{
+
+		}
+
+		if (roomNr == 4)
+		{
+
+		}
+
+	}
+	else if (target == "west")
+	{
+		if (roomNr == 1)
+		{
+
+		}
+
+		if (roomNr == 3)
+		{
+
+		}
 	}
 
 	return targetRoom;
