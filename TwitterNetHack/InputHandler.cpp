@@ -1,5 +1,9 @@
 #include "InputHandler.h"
 
+InputHandler::InputHandler(TextHandler * textHandler) {
+	this->textHandler = textHandler;
+}
+
 void InputHandler::getInput() {
 	std::string input;
 	textHandler->printText(std::string("What do you want to do?"));
