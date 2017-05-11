@@ -18,6 +18,9 @@ Room::Room()
 Room::Room(TextHandler* textHandler, int roomNumber)
 {
 	this->neighbours = new Room*[4];
+	for (int i = 0; i < 4; i++) {
+		this->neighbours[i] = nullptr;
+	}
 	this->enemies = new Enemy*[10];
 	if (roomNumber = 0) {
 		// Hard coded room 0
