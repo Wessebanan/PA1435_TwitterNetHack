@@ -7,5 +7,7 @@ private:
 	int score;
 	void quit();
 public:
+	Player();
+	~Player();
 };
 #endif

@@ -9,6 +9,8 @@ private:
 	void die();
 
 public:
+	Character();
+	~Character();
 	void damage(int amount);
 };
 #endif

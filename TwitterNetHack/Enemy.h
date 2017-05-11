@@ -7,6 +7,8 @@ class Enemy : public Character
 {
 private:
 public:
+	Enemy();
+	~Enemy();
 	std::string name;
 	void initiateCombat(Player* player);
 };

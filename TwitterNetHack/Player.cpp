@@ -3,3 +3,11 @@
 void Player::quit()
 {
 }
+
+Player::Player()
+{
+}
+
+Player::~Player()
+{
+}
