@@ -75,13 +75,14 @@ bool Room::lookat(std::string name)
 bool Room::lookAround()
 {
 	bool emptyRoomCheck = false;
+
 	for (int i = 0; i < nrOfObj; i++) 
-		textHandler->printText("An object: " + objects[i]->getShort() + "\n"); emptyRoomCheck = true;
+		textHandler->printText("An object: " + objects[i]->getShort() + "\n"); emptyRoomCheck = true; 
+	for (int i = 0; i < nrOfenemies; i++) 
+		textHandler->printText("An enemy named: " + enemies[i]->getName() + "\n"); emptyRoomCheck = true;
 
-	textHandler->printText("There is " + std::to_string(nrOfenemies) + " enemies in the room\n");
-
-	//if (!emptyRoomCheck && nrOfenemies = 0)
-	//	textHandler->printText(std::string("The room is empty"));
+	if (!emptyRoomCheck)
+		textHandler->printText(std::string("The room is empty"));
 
 	return emptyRoomCheck;
 }
