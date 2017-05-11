@@ -10,7 +10,7 @@ private:
 	Room** neighbours;
 	Enemy** enemies;
 	Obstacle** objects;
-	int nrOfObj;
+	int nrOfObj = 1;
 	
 
 	void exitRoom();
@@ -20,7 +20,7 @@ public:
 	Room();
 	Room(TextHandler* textHandler, int roomNumber);
 	~Room();
-	std::string lookat(std::string name); //Returns info on what is looked at.
+	bool lookat(std::string name); //Returns info on what is looked at.
 	bool enemyExists(std::string enemyName);
 	bool itemExists(std::string itemName);
 	bool obstacleExists(std::string obstName);
