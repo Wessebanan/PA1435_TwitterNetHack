@@ -10,9 +10,9 @@
 
 class Game {
 private:
-	TextHandler textHandler;
-	InputHandler inputHandler;
-	Player player;
+	TextHandler* textHandler;
+	InputHandler* inputHandler;
+	Player* player;
 	Room* rooms[NR_OF_ROOMS];
 
 	void generateMaze();
