@@ -39,25 +39,33 @@ Game::~Game() {
 void Game::battleSequence(Enemy * enemy)
 {
 	this->textHandler->printText(std::string("You entered combat with: ") + enemy->getName());
-	
-	while (enemy->getHealth() > 0 && this->player->getHealth() > 0)
+	std::string response = "";
+	while (true)
 	{
-		std::getline(std::cin, std::string());
-		this->textHandler->printText(std::string("You hit ") + enemy->getName() + std::string("!"));
-		enemy->damage(this->player->getAttack() - enemy->getDefense());
-		if (enemy->getHealth() <= 0)
+		this->textHandler->printText(std::string("\nWhat do you want to do? (a: attack, f: flee)"));
+		std::getline(std::cin, response);
+		if (response == "a")
 		{
+			this->textHandler->printText(std::string("\nYou hit ") + enemy->getName() + std::string("!"));
+			enemy->damage(this->player->getAttack() - enemy->getDefense());
+			if (enemy->getHealth() <= 0)
+			{
+				break;
+			}
+			this->textHandler->printText(enemy->getName() + std::string("'s remaining health: ") + std::to_string(int(enemy->getHealth())) + std::string("\n"));
+			this->textHandler->printText(std::string(std::string("") + enemy->getName() + std::string(" hits you!")));
+			this->player->damage(enemy->getAttack() - this->player->getDefense());
+			if (this->player->getHealth() <= 0)
+			{
+				break;
+			}
+			this->textHandler->printText(std::string("Your remaining health: ") + std::to_string(int(this->player->getHealth())));
+		}
+		else if (response == "f")
+		{
+			this->textHandler->printText(std::string("\nYou fled from ") + enemy->getName());
 			break;
 		}
-		this->textHandler->printText(enemy->getName() + std::string("'s remaining health: ") + std::to_string(int(enemy->getHealth())));
-		std::getline(std::cin, std::string());
-		this->textHandler->printText(std::string(std::string("") + enemy->getName() + std::string(" hits you!")));
-		this->player->damage(enemy->getAttack() - this->player->getDefense());
-		if (this->player->getHealth() <= 0)
-		{
-			break;
-		}
-		this->textHandler->printText(std::string("Your remaining health: ") + std::to_string(int(this->player->getHealth())));		
 	}
 }
 
