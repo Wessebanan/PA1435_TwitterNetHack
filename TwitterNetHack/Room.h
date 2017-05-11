@@ -9,7 +9,8 @@ class Room
 private:
 	Room** neighbours;
 	Enemy** enemies;
-	Object** objects;
+	Obstacle** objects;
+	int nrOfObj;
 	
 
 	void exitRoom();
@@ -23,7 +24,7 @@ public:
 	bool enemyExists(std::string enemyName);
 	bool itemExists(std::string itemName);
 	bool obstacleExists(std::string obstName);
-	bool traverseObstacle(std::string obstName); //Attempt to tranverse an obstacle.
+	bool traverseObstacle(std::string obstName, Player *player); //Attempt to tranverse an obstacle.
 	void moveTo(std::string direction);
 
 	void setNeighbour(Room* toSet, int neighbourNumber);
