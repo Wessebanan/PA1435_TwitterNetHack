@@ -16,7 +16,7 @@ private:
 	Player* player;
 	Room* rooms[NR_OF_ROOMS];
 	Room* currentRoom;
-
+	void processInput(std::string input);
 	void generateMaze();
 
 public:
@@ -24,7 +24,7 @@ public:
 	~Game();
 	void battleSequence(Enemy * enemy);
 	void PlayGame();
-	bool processInput(std::string input);
+
 
 
 
