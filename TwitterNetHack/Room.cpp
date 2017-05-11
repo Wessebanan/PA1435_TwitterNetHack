@@ -4,9 +4,9 @@ void Room::exitRoom()
 {
 }
 
-std::string Room::enterRoom()
+void::enterRoom()
 {
-	return std::string();
+	
 }
 
 Room::Room()
