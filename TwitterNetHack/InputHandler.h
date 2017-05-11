@@ -1,14 +1,20 @@
-#pragma once
+#ifndef INPUTHANDLER_H
+#define INPUTHANDLER_H
 
 #include <string>
 #include <sstream>
 #include <iostream>
 #include "TextHandler.h"
+#include "Game.h"
+#include "Room.h"
+#include "Player.h"
 
 class InputHandler {
 private:
-	int nrOfObservers;
 	TextHandler* textHandler;
+	Game* subGame;
+	Room* subRoom;
+	Player* subPlayer;
 
 
 public:
@@ -16,9 +22,12 @@ public:
 	InputHandler(TextHandler* textHandler);
 	~InputHandler();
 
-	void setObserver(char PLACEHOLDER);
+	void setObserver(Game* observer);
+	void setObserver(Room* observer);
+	void setObserver(Player* observer);
 	void getInput();
 
 
 
 };
+#endif

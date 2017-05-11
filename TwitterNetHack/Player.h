@@ -12,5 +12,6 @@ public:
 	Player();
 	Player(TextHandler* textHandler, float health, float attack, float defense);
 	~Player();
+	bool processInput(std::string input);
 };
 #endif

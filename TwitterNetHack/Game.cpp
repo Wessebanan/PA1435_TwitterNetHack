@@ -17,13 +17,16 @@ void Game::generateMaze() {
 	this->rooms[3]->setNeighbour(this->rooms[4], 0);
 
 	this->rooms[4]->setNeighbour(this->rooms[3], 2);
+
+	
 }
 
 Game::Game() {
 	this->textHandler = new TextHandler();
 	this->inputHandler = new InputHandler(this->textHandler);
 	this->player = new Player();
-
+	this->generateMaze();
+	this->currentRoom = nullptr;
 }
 
 Game::~Game() {
@@ -33,4 +36,12 @@ Game::~Game() {
 	delete this->textHandler;
 	delete this->inputHandler;
 	delete this->player;
+}
+
+void Game::PlayGame() {
+	bool running = true;
+	this->currentRoom = this->rooms[0];
+	while (running) {
+		this->inputHandler->getInput();
+	}
 }

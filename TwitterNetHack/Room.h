@@ -28,6 +28,9 @@ public:
 	bool traverseObstacle(std::string obstName, Player *player); //Attempt to tranverse an obstacle.
 	void moveTo(std::string direction);
 
+	bool processInput(std::string input);
+
+
 	void setNeighbour(Room* toSet, int neighbourNumber);
 };
 #endif

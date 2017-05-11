@@ -1,4 +1,5 @@
-#pragma once
+#ifndef GAME_H
+#define GAME_H
 #include "Player.h"
 #include "Enemy.h"
 #include "InputHandler.h"
@@ -14,14 +15,17 @@ private:
 	InputHandler* inputHandler;
 	Player* player;
 	Room* rooms[NR_OF_ROOMS];
+	Room* currentRoom;
 
 	void generateMaze();
 
 public:
 	Game();
 	~Game();
-
+	void PlayGame();
+	bool processInput(std::string input);
 
 
 
 };
+#endif
