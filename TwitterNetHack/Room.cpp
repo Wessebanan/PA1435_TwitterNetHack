@@ -9,6 +9,10 @@ std::string Room::enterRoom()
 	return std::string();
 }
 
+Room::Room()
+{
+}
+
 Room::Room(TextHandler *& textHandler)
 {
 }
