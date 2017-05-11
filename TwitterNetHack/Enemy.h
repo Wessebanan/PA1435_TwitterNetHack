@@ -2,14 +2,14 @@
 #define ENEMY_H
 #include "Character.h"
 #include "Player.h"
-#include "TextHandler.h"
 #include <string>
 class Enemy : public Character
 {
 private:
+	void die();
 public:
 	Enemy();
-	Enemy(TextHandler* textHandler);
+	Enemy(TextHandler* textHandler, float health, float attack, float defense, std::string name);
 	~Enemy();
 	std::string name;
 	void initiateCombat(Player* player);

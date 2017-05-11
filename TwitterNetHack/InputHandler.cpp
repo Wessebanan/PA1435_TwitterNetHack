@@ -1,5 +1,9 @@
 #include "InputHandler.h"
 
+InputHandler::InputHandler()
+{
+}
+
 InputHandler::InputHandler(TextHandler * textHandler) {
 	this->textHandler = textHandler;
 }

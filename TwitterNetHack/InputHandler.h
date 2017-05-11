@@ -12,6 +12,7 @@ private:
 
 
 public:
+	InputHandler();
 	InputHandler(TextHandler* textHandler);
 	~InputHandler();
 
