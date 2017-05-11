@@ -12,7 +12,8 @@ private:
 	Obstacle** objects;
 	int nrOfObj = 0;
 	int nrOfenemies = 0;
-	
+
+	int roomNr;
 
 	void exitRoom();
 	void enterRoom();
@@ -27,7 +28,7 @@ public:
 	bool itemExists(std::string itemName);
 	bool obstacleExists(std::string obstName);
 	bool traverseObstacle(std::string obstName, Player *player); //Attempt to tranverse an obstacle.
-	void moveTo(std::string direction);
+	Room* moveTo(std::string target);
 
 	bool processInput(std::string input);
 
