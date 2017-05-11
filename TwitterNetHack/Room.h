@@ -34,5 +34,6 @@ public:
 
 
 	void setNeighbour(Room* toSet, int neighbourNumber);
+	Room* getNeighbour(int neighbourNumber);
 };
 #endif

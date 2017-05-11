@@ -141,3 +141,8 @@ bool Room::processInput(std::string input)
 void Room::setNeighbour(Room * toSet, int neighbourNumber) {
 	this->neighbours[neighbourNumber] = toSet;
 }
+
+Room * Room::getNeighbour(int neighbourNumber)
+{
+	return this->neighbours[neighbourNumber];
+}
