@@ -1,14 +1,16 @@
 #ifndef ROOM_H
 #define ROOM_H
 #include<string>
+#include "TextHandler.h"
 class Room
 {
 private:
 	Room* neighbours;
 	void exitRoom();
 	std::string enterRoom();
+	TextHandler* textHandler;
 public:
-	Room();
+	Room(TextHandler* &textHandler);
 	~Room();
 	std::string lookat(std::string name); //Returns info on what is looked at.
 	bool enemyExists(std::string enemyName);
