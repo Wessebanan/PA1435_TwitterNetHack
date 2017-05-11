@@ -6,13 +6,14 @@
 #include "TextHandler.h"
 #include "Room.h"
 
+#define NR_OF_ROOMS 5
 
 class Game {
 private:
 	TextHandler textHandler;
 	InputHandler inputHandler;
 	Player player;
-
+	Room* rooms[NR_OF_ROOMS];
 
 	void generateMaze();
 
