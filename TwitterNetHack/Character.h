@@ -1,5 +1,6 @@
 #ifndef CHARACTER_H
 #define CHARACTER_H
+#include "TextHandler.h"
 class Character
 {
 private:
@@ -8,8 +9,11 @@ private:
 	float defense;
 	void die();
 
+	TextHandler* textHandler;
+
+
 public:
-	Character();
+	Character(TextHandler* &textHandler);
 	~Character();
 	void damage(int amount);
 };
