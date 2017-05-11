@@ -89,17 +89,27 @@ bool Room::lookAround()
 
 bool Room::enemyExists(std::string enemyName)
 {
-	return false;
+	bool check = false;
+	for (int i = 0; i < nrOfenemies; i++)
+		if (enemies[i]->getName() == enemyName)
+			check = true;
+
+	return check;
 }
 
 bool Room::itemExists(std::string itemName)
 {
-	return false;
+	return false; //No items in itteration 1
 }
 
 bool Room::obstacleExists(std::string obstName)
 {
-	return false;
+	bool check = false;
+	for (int i = 0; i < nrOfObj; i++)
+		if (objects[i]->getName() == obstName)
+			check = true;
+
+	return check;
 }
 
 bool Room::traverseObstacle(std::string obstName, Player *player)
