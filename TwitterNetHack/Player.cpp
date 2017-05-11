@@ -25,3 +25,8 @@ Player::Player(TextHandler * textHandler, float health, float attack, float defe
 Player::~Player()
 {
 }
+
+bool Player::processInput(std::string input)
+{
+	return false;
+}
