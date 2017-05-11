@@ -24,17 +24,17 @@ Room::Room(TextHandler* textHandler, int roomNumber)
 	this->enemies = new Enemy*[10];
 	if (roomNumber = 0) {
 		// Hard coded room 0
-		this->enemies[0] = new Enemy(this->textHandler, 30, 10, 7, "Meanboye");
+		this->enemies[0] = new Enemy(this->textHandler, 30, 10, 7, "Meanboye", "A mean looking kinda guy.");
 
 	}
 	else if (roomNumber = 1) {
 		// Hard coded room 1
-		this->enemies[0] = new Enemy(this->textHandler, 40, 15, 7, "A N G E R Y");
+		this->enemies[0] = new Enemy(this->textHandler, 40, 15, 7, "A N G E R Y", "An increasingly frustrated individual");
 	}
 	else if (roomNumber = 2) {
 		// Hard coded room 2
-		this->enemies[0] = new Enemy(this->textHandler, 15, 5, 0, "Mini Mean");
-		this->enemies[1] = new Enemy(this->textHandler, 15, 5, 0, "Tiny Mad");
+		this->enemies[0] = new Enemy(this->textHandler, 15, 5, 0, "Mini Mean", "A short statured object of madness");
+		this->enemies[1] = new Enemy(this->textHandler, 15, 5, 0, "Tiny Mad", "Rage of the smaller variety");
 	}
 	else if (roomNumber = 3) {
 		// Hard coded room 3
@@ -42,7 +42,7 @@ Room::Room(TextHandler* textHandler, int roomNumber)
 	}
 	else {
 		// Hard coded room 4
-		this->enemies[0] = new Enemy(this->textHandler, 65, 15, 10, "Slayer");
+		this->enemies[0] = new Enemy(this->textHandler, 65, 15, 10, "Slayer", "The meanest and angriest of dudes");
 	}
 
 
