@@ -17,6 +17,7 @@ Room::Room()
 
 Room::Room(TextHandler* textHandler, int roomNumber)
 {
+	roomNr = roomNumber;
 	this->objects = new Obstacle*[10];
 	this->neighbours = new Room*[4];
 	for (int i = 0; i < 4; i++) {
@@ -146,6 +147,7 @@ Room* Room::moveToRoom(std::string target)
 			targetRoom = getNeighbour(3);
 	} 
 			
+	textHandler->printText("You are now in room " + std::to_string(targetRoom->getRoomNr()));
 
 	return targetRoom;
 }
