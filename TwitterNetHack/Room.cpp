@@ -121,8 +121,16 @@ bool Room::traverseObstacle(std::string obstName, Player *player)
 
 }
 
-void Room::moveTo(std::string direction)
+Room* Room::moveTo(std::string target)
 {
+	Room* targetRoom = this;
+
+	if (target == "up" && roomNr == 3)
+	{
+
+	}
+
+	return targetRoom;
 }
 
 void Room::setNeighbour(Room * toSet, int neighbourNumber) {
