@@ -4,7 +4,7 @@ void Room::exitRoom()
 {
 }
 
-void::enterRoom()
+void Room::enterRoom()
 {
 	
 }
