@@ -17,6 +17,7 @@ Room::Room()
 
 Room::Room(TextHandler* textHandler, int roomNumber)
 {
+	this->objects = new Obstacle*;
 	this->neighbours = new Room*[4];
 	for (int i = 0; i < 4; i++) {
 		this->neighbours[i] = nullptr;
@@ -38,7 +39,7 @@ Room::Room(TextHandler* textHandler, int roomNumber)
 	}
 	else if (roomNumber = 3) {
 		// Hard coded room 3
-
+		this->objects[0] = new Obstacle("Spikes", "Small metal objects", "Sharp metal spikes cover the ground", 20);
 	}
 	else {
 		// Hard coded room 4
@@ -53,8 +54,16 @@ Room::~Room()
 {
 }
 
-std::string Room::lookat(std::string name)
+bool Room::lookat(std::string name)
 {
+
+	for (int i = 0; i < nrOfObj; i++) 
+	{
+		if (objects[i]->getName() == name)
+			textHandler->printText("An object: " + objects[i]->getDetailed() + "\n"); 	return true;
+		if (enemies[i]->getName() == name)
+			textHandler->printText(enemies[i]->getDesc()); 	return true;
+	}
 	return std::string();
 }
 
