@@ -10,7 +10,7 @@ void Game::generateMaze() {
 
 Game::Game() {
 	this->textHandler = new TextHandler();
-	this->inputHandler = new InputHandler(&this->textHandler);
+	this->inputHandler = new InputHandler(this->textHandler);
 	this->player = new Player();
 
 }
