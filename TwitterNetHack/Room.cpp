@@ -49,10 +49,7 @@ Room::Room(TextHandler* textHandler, int roomNumber)
 		// Hard coded room 4
 		this->enemies[0] = new Enemy(this->textHandler, 65, 15, 10, "Slayer", "The meanest and angriest of dudes");
 		nrOfenemies++;
-	}
-
-
-
+	} 
 }
 
 Room::~Room()
@@ -71,6 +68,20 @@ bool Room::lookat(std::string name)
 
 	if (!emptyRoomCheck)
 		textHandler->printText(std::string("The room is empty"));
+
+	return emptyRoomCheck;
+}
+
+bool Room::lookAround()
+{
+	bool emptyRoomCheck = false;
+	for (int i = 0; i < nrOfObj; i++) 
+		textHandler->printText("An object: " + objects[i]->getShort() + "\n"); emptyRoomCheck = true;
+
+	textHandler->printText("There is " + std::to_string(nrOfenemies) + " enemies in the room\n");
+
+	//if (!emptyRoomCheck && nrOfenemies = 0)
+	//	textHandler->printText(std::string("The room is empty"));
 
 	return emptyRoomCheck;
 }
