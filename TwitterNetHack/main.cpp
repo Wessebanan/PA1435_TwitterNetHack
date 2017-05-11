@@ -5,6 +5,7 @@
 using namespace std;
 int main()
 {
+	system("Title ---[TwitterNetHack]---");
 	Game game;
 	game.PlayGame();
 	//bool running = true;
