@@ -28,11 +28,14 @@ public:
 	bool itemExists(std::string itemName);
 	bool obstacleExists(std::string obstName);
 	bool traverseObstacle(std::string obstName, Player *player); //Attempt to tranverse an obstacle.
-	Room* moveTo(std::string target);
+	Room* moveToRoom(std::string target);
+	Enemy* moveToEnemy(std::string target);
+	Obstacle* moveToObstacle(std::string target);
 
 	bool processInput(std::string input);
 
 
 	void setNeighbour(Room* toSet, int neighbourNumber);
+	Room* getNeighbour(int neighbourNumber);
 };
 #endif

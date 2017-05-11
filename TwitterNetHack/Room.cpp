@@ -121,18 +121,52 @@ bool Room::traverseObstacle(std::string obstName, Player *player)
 
 }
 
-Room* Room::moveTo(std::string target)
+Room* Room::moveToRoom(std::string target)
 {
 	Room* targetRoom = this;
 
-	if (target == "up" && roomNr == 3)
+	if (target == "north")
 	{
-
+		if (roomNr == 0 || roomNr == 3)
+			targetRoom = getNeighbour(0);
 	}
+	else if (target == "east")
+	{
+		if (roomNr == 1 || roomNr == 2)
+			targetRoom = getNeighbour(1);
+	}
+	else if (target == "south")
+	{
+		if (roomNr == 1 || roomNr == 4)
+			targetRoom = getNeighbour(2);
+	}
+	else if (target == "west")
+	{
+		if (roomNr == 1 || roomNr == 3)
+			targetRoom = getNeighbour(3);
+	} 
+			
 
 	return targetRoom;
 }
 
+Enemy* Room::moveToEnemy(std::string target)
+{  
+	for (int i = 0; i < nrOfenemies; i++)
+		if (enemies[i]->getName() == target)
+			return enemies[i]; 
+
+	return nullptr;
+} 
+
+Obstacle* Room::moveToObstacle(std::string target)
+{
+	for (int i = 0; i < nrOfObj; i++)
+		if (objects[i]->getName() == target)
+			return objects[i];
+
+	return nullptr;
+}
 bool Room::processInput(std::string input)
 {
 	return false;
@@ -140,4 +174,9 @@ bool Room::processInput(std::string input)
 
 void Room::setNeighbour(Room * toSet, int neighbourNumber) {
 	this->neighbours[neighbourNumber] = toSet;
+}
+
+Room * Room::getNeighbour(int neighbourNumber)
+{
+	return this->neighbours[neighbourNumber];
 }
