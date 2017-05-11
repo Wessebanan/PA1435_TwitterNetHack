@@ -1,5 +1,18 @@
 #include "Game.h"
 
+void Game::processInput(std::string input)
+{
+	if (input == "Move" || input == "move") {
+		std::string target;
+		this->textHandler->printText(std::string("Where do you want to move?"));
+		target = this->inputHandler->getInput();
+		if (target == "north" || target == "east" || target == "south" || target == "west") {
+			this->currentRoom->moveToRoom(target);
+
+		}
+	}
+}
+
 void Game::generateMaze() {
 	// Automatic maze generation to be added later in development cycle
 	for (int i = 0; i < NR_OF_ROOMS; i++) {
@@ -23,8 +36,6 @@ Game::Game() {
 	this->textHandler = new TextHandler();
 	this->inputHandler = new InputHandler(this->textHandler);
 	this->player = new Player(this->textHandler, 100.0f, 60.0f, 20.0f);
-	Enemy* enemy = new Enemy(this->textHandler, 70.0f, 45.0f, 15.0f, "Chestcunt", "It's a bitch boi");
-	this->battleSequence(enemy);
 }
 
 Game::~Game() {
@@ -64,6 +75,11 @@ void Game::battleSequence(Enemy * enemy)
 void Game::PlayGame() {
 	this->currentRoom = this->rooms[0];
 	this->inputHandler->setObserver(this->rooms[0]);
+	bool running = true;
 
-	this->inputHandler->getInput();
+	while (running) {
+		this->textHandler->printText(std::string("What do you want to do?"));
+		std::string input = inputHandler->getInput();
+		this->processInput(input);
+	}
 }
