@@ -12,14 +12,25 @@ Enemy::Enemy()
 	this->name = "";
 }
 
-Enemy::Enemy(TextHandler * textHandler, float health, float attack, float defense, std::string name)
+Enemy::Enemy(TextHandler * textHandler, float health, float attack, float defense, std::string name, std::string desc)
 	: Character (textHandler, health, attack, defense)
 {
 	this->name = name;
+	this->enemyDesc = desc;
 }
 
 Enemy::~Enemy()
 {
+}
+
+std::string Enemy::getName()
+{
+	return this->name;
+}
+
+std::string Enemy::getDesc()
+{
+	return this->enemyDesc;
 }
 
 void Enemy::initiateCombat(Player * player)
