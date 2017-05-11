@@ -11,10 +11,14 @@ std::string Room::enterRoom()
 
 Room::Room()
 {
+	this->neighbours = nullptr;
+	this->textHandler = nullptr;
 }
 
 Room::Room(TextHandler *& textHandler)
 {
+	this->neighbours = new Room*[4];
+
 }
 
 Room::~Room()
