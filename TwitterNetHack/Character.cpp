@@ -4,7 +4,12 @@ void Character::die()
 {
 }
 
+
 Character::Character()
+{
+}
+
+Character::Character(TextHandler *& textHandler)
 {
 }
 

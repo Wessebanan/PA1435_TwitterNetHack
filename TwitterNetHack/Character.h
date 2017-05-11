@@ -13,6 +13,7 @@ private:
 
 
 public:
+	Character();
 	Character(TextHandler* &textHandler);
 	~Character();
 	void damage(int amount);
