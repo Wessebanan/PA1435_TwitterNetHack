@@ -22,6 +22,7 @@ private:
 public:
 	Game();
 	~Game();
+	void battleSequence(Enemy * enemy);
 	void PlayGame();
 	bool processInput(std::string input);
 

@@ -17,16 +17,13 @@ void Game::generateMaze() {
 	this->rooms[3]->setNeighbour(this->rooms[4], 0);
 
 	this->rooms[4]->setNeighbour(this->rooms[3], 2);
-
-	
 }
 
 Game::Game() {
 	this->textHandler = new TextHandler();
 	this->inputHandler = new InputHandler(this->textHandler);
-	this->player = new Player();
-	this->generateMaze();
-	this->currentRoom = nullptr;
+	this->player = new Player(this->textHandler, 100.0, 20.0, 20.0);
+
 }
 
 Game::~Game() {
@@ -38,10 +35,17 @@ Game::~Game() {
 	delete this->player;
 }
 
-void Game::PlayGame() {
-	bool running = true;
-	this->currentRoom = this->rooms[0];
-	while (running) {
-		this->inputHandler->getInput();
+void Game::battleSequence(Enemy * enemy)
+{
+	this->textHandler->printText(std::string("You entered combat with: ") + enemy->getName());
+	while (enemy->getHealth() > 0 && this->player->getHealth() > 0)
+	{
+		this->textHandler->printText(std::string("\nYou hit the enemy!\n"));
+		enemy->damage(this->player->getAttack() - enemy->getDefense());
+		this->textHandler->printText(enemy->getName() + std::string("'s remaining health: ") + std::to_string(enemy->getHealth()));
+		this->textHandler->printText(std::string(std::string("\n") + enemy->getName() + std::string(" hits you!\n")));
+		this->player->damage(enemy->getAttack() - this->player->getDefense);
+		this->textHandler->printText(std::string("Your remaining health: ") + std::to_string(this->player->getHealth()) + std::string("\n"));
+		system("pause");
 	}
 }

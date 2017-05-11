@@ -22,6 +22,7 @@ public:
 	Room(TextHandler* textHandler, int roomNumber);
 	~Room();
 	bool lookat(std::string name); //Returns info on what is looked at.
+	bool lookAround(); //Returns info on what is looked at.
 	bool enemyExists(std::string enemyName);
 	bool itemExists(std::string itemName);
 	bool obstacleExists(std::string obstName);

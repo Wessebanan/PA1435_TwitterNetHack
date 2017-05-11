@@ -49,10 +49,7 @@ Room::Room(TextHandler* textHandler, int roomNumber)
 		// Hard coded room 4
 		this->enemies[0] = new Enemy(this->textHandler, 65, 15, 10, "Slayer", "The meanest and angriest of dudes");
 		nrOfenemies++;
-	}
-
-
-
+	} 
 }
 
 Room::~Room()
@@ -75,19 +72,44 @@ bool Room::lookat(std::string name)
 	return emptyRoomCheck;
 }
 
+bool Room::lookAround()
+{
+	bool emptyRoomCheck = false;
+
+	for (int i = 0; i < nrOfObj; i++) 
+		textHandler->printText("An object: " + objects[i]->getShort() + "\n"); emptyRoomCheck = true; 
+	for (int i = 0; i < nrOfenemies; i++) 
+		textHandler->printText("An enemy named: " + enemies[i]->getName() + "\n"); emptyRoomCheck = true;
+
+	if (!emptyRoomCheck)
+		textHandler->printText(std::string("The room is empty"));
+
+	return emptyRoomCheck;
+}
+
 bool Room::enemyExists(std::string enemyName)
 {
-	return false;
+	bool check = false;
+	for (int i = 0; i < nrOfenemies; i++)
+		if (enemies[i]->getName() == enemyName)
+			check = true;
+
+	return check;
 }
 
 bool Room::itemExists(std::string itemName)
 {
-	return false;
+	return false; //No items in itteration 1
 }
 
 bool Room::obstacleExists(std::string obstName)
 {
-	return false;
+	bool check = false;
+	for (int i = 0; i < nrOfObj; i++)
+		if (objects[i]->getName() == obstName)
+			check = true;
+
+	return check;
 }
 
 bool Room::traverseObstacle(std::string obstName, Player *player)
