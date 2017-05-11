@@ -1,7 +1,14 @@
 #include "Enemy.h"
 
-Enemy::Enemy()
+Enemy::Enemy() 
+	: Character()
 {
+}
+
+Enemy::Enemy(TextHandler * textHandler) 
+	: Character (textHandler)
+{
+
 }
 
 Enemy::~Enemy()
