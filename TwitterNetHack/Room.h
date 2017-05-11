@@ -34,6 +34,7 @@ public:
 
 	bool processInput(std::string input);
 
+	int getRoomNr() { return roomNr; };
 
 	void setNeighbour(Room* toSet, int neighbourNumber);
 	Room* getNeighbour(int neighbourNumber);
