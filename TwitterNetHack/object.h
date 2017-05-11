@@ -14,7 +14,8 @@ private:
 public:
 	Object(string name, string shortD, string detailedD );
 	~Object() {};
-
+	 
+	string getName() { return name; };
 	string getShort() { return shortDesc; };
 	string getDetailed() { return detailedDesc; };
 };

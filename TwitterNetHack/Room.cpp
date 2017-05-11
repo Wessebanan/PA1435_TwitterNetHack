@@ -12,7 +12,7 @@ std::string Room::enterRoom()
 Room::Room()
 {
 	this->neighbours = nullptr;
-	this->textHandler = nullptr;
+	this->textHandler = nullptr; 
 }
 
 Room::Room(TextHandler* textHandler, int roomNumber)
@@ -44,6 +44,9 @@ Room::Room(TextHandler* textHandler, int roomNumber)
 		// Hard coded room 4
 		this->enemies[0] = new Enemy(this->textHandler, 65, 15, 10, "Slayer");
 	}
+
+
+
 }
 
 Room::~Room()
@@ -70,9 +73,13 @@ bool Room::obstacleExists(std::string obstName)
 	return false;
 }
 
-bool Room::traverseObstacle(std::string obstName)
-{
+bool Room::traverseObstacle(std::string obstName, Player *player)
+{ 
+	for (int i = 0; i < nrOfObj; i++) 
+		if (objects[i]->getName() == obstName)
+			player->damage(objects[i]->getDamage()); 	return true; 
 	return false;
+
 }
 
 void Room::moveTo(std::string direction)
