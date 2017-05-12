@@ -8,7 +8,6 @@ class Player : public Character
 private:
 	int score;
 	bool inCombat;
-	//void quit();
 	void die();
 
 	bool dead = false;
