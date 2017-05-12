@@ -19,6 +19,6 @@ public:
 	std::string getName();
 	std::string getDesc();
 
-	bool isDead() = {return dead; };
+	bool isDead() {return dead; };
 };
 #endif
