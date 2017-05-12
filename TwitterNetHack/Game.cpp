@@ -114,7 +114,7 @@ void Game::PlayGame() {
 	this->inputHandler->setObserver(this->rooms[0]);
 	bool running = true;
 
-	while (running || !this->player->isDead()) {
+	while (running && !this->player->isDead()) {
 		this->textHandler->printText(std::string("What do you want to do? (help for help)"));
 		std::string input = inputHandler->getInput();
 		if (input == "help")
