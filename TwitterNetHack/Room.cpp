@@ -61,14 +61,18 @@ bool Room::lookat(std::string name)
 {
 	bool emptyRoomCheck = false;
 	for (int i = 0; i < nrOfObj; i++)  
-		if (objects[i]->getName() == name)
-			textHandler->printText("An object: " + objects[i]->getDetailed() + "\n"); emptyRoomCheck = true;
+		if (objects[i]->getName() == name) { 
+			textHandler->printText("An object: " + objects[i]->getDetailed() + "\n"); 
+			emptyRoomCheck = true;
+		}
 	for (int i = 0; i < nrOfenemies; i++)
-		if (enemies[i]->getName() == name)
-			textHandler->printText("An enemy: " + enemies[i]->getDesc() + "\n"); emptyRoomCheck = true;
-
+		if (enemies[i]->getName() == name) {
+			textHandler->printText("An enemy: " + enemies[i]->getDesc() + "\n");
+			emptyRoomCheck = true; 
+		}
+			
 	if (!emptyRoomCheck)
-		textHandler->printText(std::string("The room is empty"));
+		textHandler->printText(std::string("Can't find \"" + name + "\"\n"));
 
 	return emptyRoomCheck;
 }

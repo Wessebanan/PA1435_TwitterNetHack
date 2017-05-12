@@ -25,6 +25,20 @@ void Game::processInput(std::string input)
 			}
 		}
 	}
+
+	else if (input == "Look" || input == "look") {
+		std::string target;  
+		this->textHandler->printText(std::string("Look around or at somthing? (around/at)"));
+		target = this->inputHandler->getInput();
+		if (target == "around" ) {
+			 this->currentRoom->lookAround();
+		}
+		else if (target == "at") {
+			this->textHandler->printText(std::string("What do you want to look at?"));
+			target = this->inputHandler->getInput();
+			this->currentRoom->lookat(target);
+		}
+	}
 }
 
 void Game::generateMaze() {
