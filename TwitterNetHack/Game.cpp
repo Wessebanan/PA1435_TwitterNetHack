@@ -119,7 +119,14 @@ void Game::PlayGame() {
 		std::string input = inputHandler->getInput();
 		if (input == "help")
 		{
-			this->textHandler->printText(std::string("move: move\nlook: look\nmove->to"));
+			this->textHandler->printText
+				(
+				std::string("move: move\n")+
+				std::string("look: look\n")+
+				std::string("move->enemy name: fight enemy\n")+
+				std::string("move->direction(north/east/south/west): move to the neighbouring room in that direction\n")+
+				std::string("move->obstacle name: attempt to traverse the obstacle\n")
+				);
 		}
 		else if (input == "quit")
 		{
