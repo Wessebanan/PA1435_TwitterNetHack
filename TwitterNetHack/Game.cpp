@@ -115,8 +115,21 @@ void Game::PlayGame() {
 	bool running = true;
 
 	while (running) {
-		this->textHandler->printText(std::string("What do you want to do?"));
+		this->textHandler->printText(std::string("What do you want to do? (help for help)"));
 		std::string input = inputHandler->getInput();
-		this->processInput(input);
+		if (input == "help")
+		{
+			this->textHandler->printText(std::string("move to move"));
+		}
+		else if (input == "quit" || this->player->isDead())
+		{
+			this->textHandler->printText(std::string("Qutting game..."));
+			std::getline(std::cin, std::string());
+			running = false;
+		}
+		else
+		{
+			this->processInput(input);
+		}
 	}
 }
