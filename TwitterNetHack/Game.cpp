@@ -114,17 +114,15 @@ void Game::PlayGame() {
 	this->inputHandler->setObserver(this->rooms[0]);
 	bool running = true;
 
-	while (running) {
+	while (running || !this->player->isDead()) {
 		this->textHandler->printText(std::string("What do you want to do? (help for help)"));
 		std::string input = inputHandler->getInput();
 		if (input == "help")
 		{
-			this->textHandler->printText(std::string("move to move"));
+			this->textHandler->printText(std::string("move: move\nlook: look\nmove->to"));
 		}
-		else if (input == "quit" || this->player->isDead())
+		else if (input == "quit")
 		{
-			this->textHandler->printText(std::string("Qutting game..."));
-			std::getline(std::cin, std::string());
 			running = false;
 		}
 		else
@@ -132,4 +130,6 @@ void Game::PlayGame() {
 			this->processInput(input);
 		}
 	}
+	this->textHandler->printText(std::string("Qutting game..."));
+	std::getline(std::cin, std::string());
 }

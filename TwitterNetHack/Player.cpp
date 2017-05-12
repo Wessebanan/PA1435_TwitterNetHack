@@ -1,10 +1,5 @@
 #include "Player.h"
 
-//void Player::quit()
-//{
-//	this->textHandler->printText(std::string("\nQuitting game...\n"));
-//}
-
 void Player::die()
 {
 	this->textHandler->printText(std::string("You died."));
