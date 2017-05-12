@@ -90,6 +90,7 @@ void Game::battleSequence(Enemy * enemy)
 			enemy->damage(this->player->getAttack() - enemy->getDefense());
 			if (enemy->getHealth() <= 0)
 			{
+				this->currentRoom->removeEnemy(enemy->getName());
 				break;
 			}
 			 
