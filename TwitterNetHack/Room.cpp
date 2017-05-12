@@ -178,6 +178,19 @@ bool Room::processInput(std::string input)
 	return false;
 }
 
+void Room::removeEnemy(std::string enemy)
+{ 
+	for (int i = 0; i < nrOfenemies; i++)
+		if (enemies[i]->getName() == enemy) {
+			delete enemies[i];
+			if (nrOfenemies == 2 && i == 0)
+			{
+				enemies[0] = enemies[1];
+			}
+			nrOfenemies--; 
+		} 
+}
+ 
 void Room::setNeighbour(Room * toSet, int neighbourNumber) {
 	this->neighbours[neighbourNumber] = toSet;
 }

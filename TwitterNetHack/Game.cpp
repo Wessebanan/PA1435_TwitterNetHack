@@ -40,7 +40,7 @@ void Game::processInput(std::string input)
 		}
 	}
 }
-
+ 
 void Game::generateMaze() {
 	// Automatic maze generation to be added later in development cycle
 	for (int i = 0; i < NR_OF_ROOMS; i++) {
