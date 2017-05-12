@@ -9,7 +9,7 @@ void Player::die()
 {
 	this->textHandler->printText(std::string("You died at the hands of Chestcunt"));
 	std::getline(std::cin, std::string());
-	this->isDead = true;
+	this->dead = true;
 }
 
 Player::Player()
