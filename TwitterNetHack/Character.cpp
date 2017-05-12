@@ -28,6 +28,8 @@ void Character::damage(float amount)
 		dmg = 0;
 	}
 	this->health -= dmg;
+
+	textHandler->printText("Health: " + std::to_string(int(health)) + "\n");
 	if (health <= 0)
 	{
 		this->die();
