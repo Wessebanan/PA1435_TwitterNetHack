@@ -121,7 +121,7 @@ void Game::PlayGame() {
 		{
 			this->textHandler->printText
 				(
-					std::string("move: move.\n")+
+					std::string("\nmove: move.\n")+
 					std::string("look: look.\n")+
 					std::string("move->enemy name: fight enemy.\n")+
 					std::string("move->direction(north/east/south/west): move to the neighbouring room in that direction.\n")+
