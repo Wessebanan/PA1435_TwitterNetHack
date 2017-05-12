@@ -36,6 +36,8 @@ public:
 
 	int getRoomNr() { return roomNr; };
 
+	void removeEnemy(std::string enemy);
+
 	void setNeighbour(Room* toSet, int neighbourNumber);
 	Room* getNeighbour(int neighbourNumber);
 };
