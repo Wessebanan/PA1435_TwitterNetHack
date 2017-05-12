@@ -9,6 +9,8 @@ private:
 	void die();
 	std::string name;
 	std::string enemyDesc;
+
+	bool dead = false;
 public:
 	Enemy();
 	Enemy(TextHandler* textHandler, float health, float attack, float defense, std::string name, std::string desc);
@@ -16,5 +18,7 @@ public:
 
 	std::string getName();
 	std::string getDesc();
+
+	bool isDead() {return dead; };
 };
 #endif

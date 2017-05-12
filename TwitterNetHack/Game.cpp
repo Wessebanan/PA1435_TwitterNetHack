@@ -92,14 +92,13 @@ void Game::battleSequence(Enemy * enemy)
 			{
 				break;
 			}
-			this->textHandler->printText(enemy->getName() + std::string("'s remaining health: ") + std::to_string(int(enemy->getHealth())) + std::string("\n"));
+			 
 			this->textHandler->printText(std::string(std::string("") + enemy->getName() + std::string(" hits you!")));
 			this->player->damage(enemy->getAttack() - this->player->getDefense());
 			if (this->player->getHealth() <= 0)
 			{
 				break;
-			}
-			this->textHandler->printText(std::string("Your remaining health: ") + std::to_string(int(this->player->getHealth())));
+			} 
 		}
 		else if (response == "f")
 		{
