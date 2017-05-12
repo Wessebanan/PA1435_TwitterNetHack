@@ -8,12 +8,15 @@ class Player : public Character
 private:
 	int score;
 	bool inCombat;
-	void quit();
+	//void quit();
 	void die();
+
+	bool dead = false;
 public:
 	Player();
 	Player(TextHandler* textHandler, float health, float attack, float defense);
 	~Player();
 	bool processInput(std::string input);
+	bool isDead();
 };
 #endif
